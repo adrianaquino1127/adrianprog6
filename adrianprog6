@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num, sumOfDigits = 0, temp, i;
+    
+    // Input number
+    cout << "Enter a positive number: ";
+    cin >> num;
+    
+    // Copy num to temp for processing
+    temp = num;
+    
+    // Calculate the sum of digits
+    while (temp != 0) {
+        sumOfDigits += temp % 10;  // Add last digit to sum
+        temp /= 10;                // Remove the last digit
+    }
+    
+    // Output the sum of digits
+    cout << "The sum of the digits is: " << sumOfDigits << endl;
+    
+    // Use a do-while loop to check divisibility by numbers 2 to 9
+    i = 2;
+    do {
+        if (num % i == 0) {
+            cout << num << " is divisible by " << i << endl;
+        } else {
+            cout << num << " is not divisible by " << i << endl;
+        }
+        i++;  // Increment to check next number
+    } while (i <= 9);  // Continue until i reaches 9
+    
+    return 0;
+}
